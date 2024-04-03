@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/style/shop.css">
+</head>
+
+<body>
+    <%- include('includes/header') %>
+   
+    <% for(const shirt of shirts ) { %>
+        <div class="shirt-container">
+            <li class="shirt-item">
+                <article id="product-card">
+                    <h2>
+                        <%= shirt.name %>
+                    </h2>
+                    <div class="shirt-photo">
+                        <img src="<%=shirt.picture%>" alt="<%=shirt.name%>">
+                    </div>
+
+                    <h3>
+                        <%= shirt.price %> $
+                    </h3>
+                        
+                    <!-- Add the form here -->
+                    <form action="/addToCart" method="post">    
+                        <input type="hidden" name="id" value="<%= shirt._id %>">
+                        <input type="hidden" name="name" value="<%= shirt.name %>">
+                        <input type="hidden" name="price" value="<%= shirt.price %>">
+                        <input type="hidden" name="picture" value="<%= shirt.picture %>">
+                        <button type="submit">Add to cart</button>
+                    </form>
+                    <!-- End of form -->
+
+                </article>
+            </li>
+        </div>
+    <% } %>
+    <footer>
+        <%- include('includes/footer') %>
+    </footer>
+</body>
+
+</html>

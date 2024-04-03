@@ -1,0 +1,70 @@
+
+.shirt-container {
+    display: inline-block; 
+  }
+.shirt-item {
+    list-style: none;
+    margin: 20px;
+    padding: 0;
+    /* display: inline-block; */
+    width: 300px !important;
+   
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 2, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction:column;
+    
+  }
+  
+  .shirt-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .shirt-item article {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .shirt-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    /* display:inline; */
+  }
+  .shirt-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display:inline;
+  }
+  /* .shirt-item button {
+    background: #77A6F7 ;
+    padding: 3px;
+    color: whitesmoke;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    box-shadow: 0 0 5px rgba(0, 2, 0, 0.3);
+    display: inline;
+    margin: auto 0 auto 40%;
+  } */
+  
+  .shirt-photo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .shirt-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .shirt-item h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 0;
+  }
+  

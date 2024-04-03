@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/style/cart.css">
+</head>
+
+<body>
+    <%- include('includes/header') %>
+
+    <% if (cartLength === 0) { %>
+        <div id="zeroitemmessage">
+            <h1>You have 0 Items in your cart <i class="fa-regular fa-face-frown"></i>  </h1>
+        </div>
+        
+    <% } else { %>
+        <div id="itemsaddeddiv">
+
+        
+        <h5>There are <%= cartLength %>  item in your cart </h5>
+        
+        <ul id="shirts-list">
+            <% let total=0; %>
+            <% for (const cartItem of cartItems) { %>
+                <div id="pictureOfaddedshirt">
+                  <img src="<%= cartItem.picture %>" alt="">  
+                </div>
+                <h3><%= cartItem.name %></h3>
+                <h3><%= cartItem.price %></h3>
+                <% total+=parseInt(cartItem.price) %>
+                
+                <h4>Total : <%=total %> </h4>
+                
+                
+        </ul>
+        <form action="/deleteshirt" method="post">
+            <input type="text" name="id" value="<%= cartItem.id %>" style="display: none;">
+            <button>Delete</button> 
+        </form>
+    <% } %>
+    &nbsp;
+    <hr>
+    <form action="/sendtocheckout?total=<%= total %>" method="get">
+        <input type="text" name="total" value="<%= total %>" style="display: none;">
+        <button type="submit">Checkout</button>
+    </form>
+    &nbsp
+    
+
+<% } %>
+</div>
+<footer>
+    <%- include('includes/footer') %>
+</footer>
+</body>
+
+</html>
